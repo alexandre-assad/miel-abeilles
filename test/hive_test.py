@@ -20,7 +20,7 @@ class TestHive(unittest.TestCase):
 
     def test_reproduction(self):
         bee1,bee2 = Bee(), Bee()
-        bee1.genetics,bee2.genetics = [[300,600],[400,400],[600,500]], [[400,400],[600,500],[200,600]]
+        bee1.genetics,bee2.genetics = [[200,600],[400,400],[600,500]], [[400,400],[600,500],[200,600]]
         bee1.score,bee2.score = bee1.fitness_score([500,500]),bee2.fitness_score([500,500])
         bees_new = self.hive1.reproduction(bee1,bee2)
-        self.assertEqual([bees_new[0].genetics[0],bees_new[0].genetics[1]],[[300,600],[600,500]])
+        self.assertEqual([bees_new[0].genetics[0],bees_new[0].genetics[1]],[[200,600],[400,400]])
