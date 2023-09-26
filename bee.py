@@ -16,9 +16,12 @@ class Bee:
         self.genetics = flowers
 
 
-    def fitness_score(departure:list,flowers:list) ->int:
+    def fitness_score(self,departure:list) ->int:
         """
-        Input : coordinates : coords of departures and coords of flowers
+        Input : coordinates : coords of departures
         Output : a manathan distance of the travel
         """
-        pass
+        distance = manhattan_distance(departure,self.genetics[0]) + manhattan_distance(departure,self.genetics[-1])
+        for i in range(len(self.genetics)-1):
+            distance += manhattan_distance(self.genetics[i],self.genetics[i+1])
+        return distance

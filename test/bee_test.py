@@ -16,4 +16,5 @@ class TestBee(unittest.TestCase):
 
     def test_fitness_score(self):
         coords_test = [[200,600],[400,400],[600,500]]
-        self.assertEqual(self.bee1.fitness_score([500,500],coords_test) in [1200,1400],True)
+        self.bee1.genetics = coords_test
+        self.assertEqual(self.bee1.fitness_score([500,500]) in [1200,1400],True)
