@@ -20,7 +20,7 @@ class Hive:
         while run:
             self.bees.sort(key=self.get_score)
             self.bees = self.bees[:50]
-            if self.bees[0].score == self.bees[49].score:
+            if self.bees[0].score == self.bees[49].score and self.bees[0].score == self.bees[30].score:
                 run = False
             for i in range(0,49,2):
                 bees_newborn = self.reproduction(self.bees[0],self.bees[1])
