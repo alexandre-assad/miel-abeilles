@@ -21,6 +21,7 @@ class TestBee(unittest.TestCase):
 
     def test_mutation(self):
         coord_test = [[1,2],[3,4],[4,5]]
+        self.bee1.genetics = coord_test
         self.bee1.mutation()
         self.assertEqual(len(self.bee1.genetics),3)
-        self.assertNotEqual(self.bee1.genetics,coord_test)
+        self.assertNotEqual(self.bee1.genetics, [[1,2],[3,4],[4,5]])

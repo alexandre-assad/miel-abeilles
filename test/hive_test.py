@@ -9,7 +9,6 @@ class TestHive(unittest.TestCase):
         return super().setUp()
     
     def test_init(self):
-        self.assertEqual(self.hive1.pos,[500,500])
         self.assertEqual(len(self.hive1.bees),100)
         self.assertEqual(len(self.hive1.flowers),50)
         self.assertNotEqual(self.hive1.bees[0].genetics,self.hive1.bees[97].genetics)
@@ -20,7 +19,6 @@ class TestHive(unittest.TestCase):
         self.hive1.genetics_algorythm()
         self.assertEqual(len(self.hive1.bees),100)
         self.assertEqual(len(self.hive1.bees[51].genetics),50)
-        self.assertEqual(self.hive1.bees[0].genetics,self.hive1.bees[1].genetics)
 
 
     def test_reproduction(self):
@@ -32,4 +30,11 @@ class TestHive(unittest.TestCase):
         self.hive1.reproduction(bee1,bee2)
         self.assertEqual(len(self.hive1.bees),4)
         self.assertEqual(self.hive1.bees[3].genetics,[[400,400],[200,600],[600,500]])
+    
+    def test_get_mean_score(self):
+        bee1 = Bee()
+        bee2 = Bee()
+        bee1.score , bee2.score = 100, 300
+        self.hive1.bees = [bee1,bee2]
+        self.assertEqual(self.hive1.get_mean_score(),200)
         

@@ -1,6 +1,7 @@
 from utils.pandas_utils import coordinates_scrap
 from bee import Bee
 import random
+import math
 
 class Hive:
 
@@ -15,27 +16,41 @@ class Hive:
 
 
 
-
+    def get_mean_score(self):
+        return (sum(self.bees[i].score for i in range(len(self.bees))))/len(self.bees)
     
     def genetics_algorythm(self):
         """
         Basic code : Genetics algorythm like: a 1st generation, then natural selection, reproduction with the 50 best bees with the death of the 50 worst, then continue and add some mutations sometimes
         """
         run = True
-        iteration = 0
+        countdown = 0
+        min_average_score = math.inf
         while run:
             self.bees.sort(key=self.get_score)
-            self.bees = self.bees[:50]
-            if self.bees[0].score == self.bees[10].score: 
-                run = False
+            del self.bees[50:]
+
+            average_score = self.get_mean_score()
+            if average_score <= min_average_score +10 and average_score >= min_average_score-10:
+
+                self.bees[random.randint(1,49)].mutation()
+                self.bees[random.randint(1,49)].mutation()
+                self.bees[random.randint(1,49)].mutation()
+                countdown += 1
+
+            elif average_score < min_average_score:
+                min_average_score = average_score
+
             for i in range(0,49,2):
                 self.reproduction(self.bees[i],self.bees[i+1])
-            iteration += 1
+            
 
-            if iteration % 5 == 0:
-                self.bees[random.randint(1,99)].mutation()
-                self.bees[random.randint(1,99)].mutation()
-                self.bees[random.randint(1,99)].mutation()
+            if countdown == 1000:
+                run = False
+            
+            
+
+            
     
 
 
