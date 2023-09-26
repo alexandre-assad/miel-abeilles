@@ -20,6 +20,7 @@ class TestHive(unittest.TestCase):
         self.hive1.genetics_algorythm()
         self.assertEqual(len(self.hive1.bees),100)
         self.assertEqual(len(self.hive1.bees[51].genetics),50)
+        self.assertEqual(self.hive1.bees[0].genetics,self.hive1.bees[1].genetics)
 
 
     def test_reproduction(self):

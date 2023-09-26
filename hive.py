@@ -22,6 +22,7 @@ class Hive:
         Basic code : Genetics algorythm like: a 1st generation, then natural selection, reproduction with the 50 best bees with the death of the 50 worst, then continue and add some mutations sometimes
         """
         run = True
+        iteration = 0
         while run:
             self.bees.sort(key=self.get_score)
             self.bees = self.bees[:50]
@@ -29,6 +30,12 @@ class Hive:
                 run = False
             for i in range(0,49,2):
                 self.reproduction(self.bees[i],self.bees[i+1])
+            iteration += 1
+
+            if iteration % 5 == 0:
+                self.bees[random.randint(1,99)].mutation()
+                self.bees[random.randint(1,99)].mutation()
+                self.bees[random.randint(1,99)].mutation()
     
 
 
