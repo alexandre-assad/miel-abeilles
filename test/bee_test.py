@@ -13,3 +13,7 @@ class TestBee(unittest.TestCase):
         self.bee1.random_travel(coords_test)
         self.assertEqual(len(self.bee1.genetics),2)
         self.assertEqual(self.bee1.genetics[0] in coords_test,True)
+
+    def test_fitness_score(self):
+        coords_test = [[200,600],[400,400],[600,500]]
+        self.assertEqual(self.bee1.fitness_score([500,500],coords_test) in [1200,1400],True)
