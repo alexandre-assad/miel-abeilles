@@ -8,8 +8,8 @@ class TestBee(unittest.TestCase):
         return super().setUp()
     
 
-    def test_travel(self):
+    def test_random_travel(self):
         coords_test = [[1,4],[2,7]]
-        self.bee1.travel(coords_test)
+        self.bee1.random_travel(coords_test)
         self.assertEqual(len(self.bee1.genetics),2)
         self.assertEqual(self.bee1.genetics[0] in coords_test,True)
