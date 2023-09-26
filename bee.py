@@ -1,4 +1,5 @@
 import random
+from utils.math_utils import manhattan_distance
 
 class Bee:
 
@@ -13,3 +14,11 @@ class Bee:
         """
         random.shuffle(flowers)
         self.genetics = flowers
+
+
+    def fitness_score(departure:list,flowers:list) ->int:
+        """
+        Input : coordinates : coords of departures and coords of flowers
+        Output : a manathan distance of the travel
+        """
+        pass
