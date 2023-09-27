@@ -23,8 +23,10 @@ class Hive:
         """
         Basic code : Genetics algorythm like: a 1st generation, then natural selection, reproduction with the 50 best bees with the death of the 50 worst, then continue and add some mutations sometimes
         """
+        data_of_evolution = [] 
         run = True
         countdown = 0
+        iteration = 0
         min_average_score = math.inf
         while run:
             self.bees.sort(key=self.get_score)
@@ -44,7 +46,8 @@ class Hive:
             for i in range(0,49,2):
                 self.reproduction(self.bees[i],self.bees[i+1])
             
-
+            iteration += 1
+            data_of_evolution.append([iteration, average_score])
             if countdown == 1000:
                 run = False
             
