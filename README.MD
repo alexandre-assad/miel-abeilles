@@ -1,47 +1,45 @@
-
 # Bee Genetic Algorithm
 
-Ce projet met en œuvre un algorithme génétique pour résoudre un problème de recherche du meilleur chemin entre une ruche et plusieurs fleurs dispersées dans un espace bidimensionnel.
+This project implements a genetic algorithm to solve a problem of finding the best path between a hive and several randomly scattered flowers in a two-dimensional space.
 
-## Objectif
+## Objective
 
-L'objectif principal de ce projet est de développer un algorithme génétique pour guider un groupe d'abeilles dans la recherche du chemin optimal pour collecter du nectar de fleurs et retourner à la ruche. Les abeilles les plus performantes sont sélectionnées pour la reproduction, créant ainsi une nouvelle génération d'abeilles avec des parcours similaires mais améliorés.
+The primary goal of this project is to develop a genetic algorithm to guide a group of bees in finding the optimal path for collecting nectar from flowers and returning to the hive. The most successful bees are selected for reproduction, thereby creating a new generation of bees with similar but improved paths.
 
-## Configuration du projet
+## Project Structure
 
-Le projet est organisé comme suit :
+The project is organized as follows:
 
-- `Hive.py` : Classe principale pour l'algorithme génétique.
-- `Bee.py` : Classe représentant une abeille individuelle.
-- `utils/` : Répertoire contenant des utilitaires et des fonctions d'assistance.
-- `tests/` : Répertoire contenant les tests unitaires du projet.
-- `main.py` : Fichier principal pour exécuter l'algorithme génétique.
-- `graphs/` : Répertoire où les graphiques générés seront enregistrés.
+- `Hive.py`: Main class for the genetic algorithm.
+- `Bee.py`: Class representing an individual bee.
+- `utils/`: Directory containing utilities and helper functions.
+- `tests/`: Directory containing project unit tests.
+- `main.py`: Main file to run the genetic algorithm.
+- `graphs/`: Directory where generated graphs will be saved.
 
-## Prérequis
+## Prerequisites
 
-Assurez-vous d'avoir les dépendances suivantes installées pour exécuter le projet :
+Make sure you have the following dependencies installed to run the project:
 
 - Python (version 3.11.2)
-- Matplotlib (version 3.6.3) : Vous pouvez l'installer en utilisant `pip install matplotlib`.
+- Matplotlib (version 3.6.3): You can install it using `pip install matplotlib`.
 
-## Utilisation
+## Usage
 
-Pour utiliser l'algorithme génétique pour trouver le meilleur chemin entre la ruche et les fleurs, suivez ces étapes :
+To use the genetic algorithm to find the best path between the hive and the flowers, follow these steps:
 
-1. Exécutez le fichier `main.py` en utilisant la commande suivante :
+1. Execute the `main.py` file using the following command:
 
    ```bash
    python main.py
    ```
 
-2. L'algorithme génétique sera lancé.
+2. The genetic algorithm will be launched.
 
-3. Une fois que l'algorithme a convergé, deux graphiques seront générés et enregistrés dans le répertoire `graphs/`. L'un montrera le parcours des abeilles de la dernière génération, tandis que l'autre affichera l'amélioration du parcours au fil des générations.
+3. Once the algorithm has converged, two graphs will be generated and saved in the `graphs/` directory. One graph will display the path of the bees from the last generation, while the other will show the improvement in the path over generations.
 
-## Exemple de résultats
+## Example Results
 
-![Parcours de la meilleure abeille](graphs/best_travel.png)
-![Distance moyenne des abeilles](graphs/average_distance_graph.png)
-
+![Best Bee's Path](graphs/best_travel.png)
+![Average Bee Distance](graphs/average_distance_graph.png)
 
