@@ -41,6 +41,6 @@ class Bee:
     def show_travel(self):
         coors = [[500,500]]
         for flower in self.genetics:
-            coors.append[flower[0],flower[1]]
+            coors.append([flower[0],flower[1]])
         coors.append([500,500])
         graph_travel(coors)

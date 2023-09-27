@@ -57,6 +57,7 @@ class Hive:
                 run = False
 
         graph_by_time(data_of_evolution)
+        self.bees[0].show_travel()
             
             
 
