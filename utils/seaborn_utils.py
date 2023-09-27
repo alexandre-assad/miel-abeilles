@@ -13,4 +13,4 @@ def graph_by_time(data:list) ->None:
     plt.plot(time,average_distance)
     plt.xlabel('Iterations')
     plt.ylabel('Average distance')
-    plt.savefig(path_graphs('books_read.png'))
+    plt.savefig(path_graphs('average_distance_graph.png'))
