@@ -1,4 +1,5 @@
 from utils.pandas_utils import coordinates_scrap
+from utils.matplotlib_utils import graph_by_time
 from bee import Bee
 import random
 import math
@@ -38,6 +39,9 @@ class Hive:
                 self.bees[random.randint(1,49)].mutation()
                 self.bees[random.randint(1,49)].mutation()
                 self.bees[random.randint(1,49)].mutation()
+                self.bees[random.randint(1,49)].mutation()
+                self.bees[random.randint(1,49)].mutation()
+                
                 countdown += 1
 
             elif average_score < min_average_score:
@@ -48,8 +52,11 @@ class Hive:
             
             iteration += 1
             data_of_evolution.append([iteration, average_score])
-            if countdown == 1000:
+
+            if countdown == 1500:
                 run = False
+
+        graph_by_time(data_of_evolution)
             
             
 

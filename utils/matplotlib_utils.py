@@ -4,6 +4,10 @@ from utils.os_utils import path_graphs
 
 
 def graph_by_time(data:list) ->None:
+    """
+    Input : a list, a data of list with this structure : data = [[iteration0,average0],[iteration1,average1],...]
+    Output : Save a png file of the graph of the data
+    """
     time = []
     average_distance = []
     for measurement in data:
